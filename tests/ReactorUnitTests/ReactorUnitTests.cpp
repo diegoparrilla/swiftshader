@@ -20,7 +20,7 @@
 
 #include <array>
 #include <cmath>
-#include <filesystem>
+#include <experimental/filesystem>
 #include <fstream>
 #include <thread>
 #include <tuple>
@@ -3796,7 +3796,7 @@ TEST(ReactorUnitTests, EmitAsm)
 	// Only supported by LLVM for now
 	if(BackendName().find("LLVM") == std::string::npos) return;
 
-	namespace fs = std::filesystem;
+	namespace fs = std::experimental::filesystem;
 
 	FunctionT<int(void)> function;
 	{
@@ -3855,7 +3855,7 @@ TEST(ReactorUnitTests, EmitAsm)
 
 	// Delete the file in case subsequent runs generate one with a different sequence number
 	fin.close();
-	std::filesystem::remove(path);
+	std::experimental::filesystem::remove(path);
 }
 #endif
 

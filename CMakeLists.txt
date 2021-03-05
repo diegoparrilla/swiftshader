@@ -16,6 +16,8 @@ cmake_minimum_required(VERSION 3.13)
 
 project(SwiftShader C CXX ASM)
 
+link_libraries(stdc++fs)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CXX_STANDARD_REQUIRED ON)
 # MSVC doesn't define __cplusplus by default
@@ -1027,3 +1029,5 @@ endif()
 if(SWIFTSHADER_BUILD_TESTS AND SWIFTSHADER_BUILD_VULKAN)
     add_subdirectory(${TESTS_DIR}/VulkanUnitTests) # Add VulkanUnitTests target
 endif()
+
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=stdc++fs")
